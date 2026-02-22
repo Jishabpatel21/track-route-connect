@@ -1,0 +1,146 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Updated railway blue to match Indian Railways */
+    --primary: 216 90% 23%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Better complementary color */
+    --secondary: 28 100% 50%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 28 90% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 216 90% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 216 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 83% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 216 83% 33%;
+    --sidebar-ring: 216 83% 53%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .railway-gradient {
+    @apply bg-gradient-to-r from-[#00539C] to-[#0077CC];
+  }
+  
+  .railway-card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .page-container {
+    @apply container mx-auto px-4 py-8;
+  }
+
+  .ir-button {
+    @apply bg-[#00539C] text-white px-4 py-2 rounded hover:bg-[#004385] transition-colors;
+  }
+
+  .ir-card-header {
+    @apply bg-[#00539C] text-white py-3 px-4 rounded-t-lg;
+  }
+
+  .ir-status-confirmed {
+    @apply bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .ir-status-waiting {
+    @apply bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .ir-status-cancelled {
+    @apply bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  /* Search Train styles with purple color combination */
+  .search-page-gradient {
+    @apply bg-gradient-to-r from-purple-900 to-purple-700;
+  }
+  
+  .search-train-card {
+    @apply bg-white rounded-xl shadow-lg border border-purple-100 hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .search-train-button {
+    @apply bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-700 hover:to-purple-500 px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  /* Admin seat management styles */
+  .admin-action-button {
+    @apply bg-[#00539C] text-white px-4 py-2 rounded hover:bg-[#004385] transition-colors flex items-center gap-2;
+  }
+  
+  .admin-control-panel {
+    @apply bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6;
+  }
+}
